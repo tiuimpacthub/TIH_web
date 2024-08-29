@@ -249,30 +249,3 @@
 
 })(jQuery);
 
-document.addEventListener("DOMContentLoaded", function() {
-    const lazyImages = document.querySelectorAll("img.lazy");
-
-    // Check if IntersectionObserver is supported
-    if ("IntersectionObserver" in window) {
-        const lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    const lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.remove("lazy");
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-
-        lazyImages.forEach(function(lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        lazyImages.forEach(function(lazyImage) {
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.classList.remove("lazy");
-        });
-    }
-});
