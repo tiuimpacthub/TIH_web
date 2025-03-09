@@ -67,6 +67,16 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Video Background Styling */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures full coverage */
+  z-index: -1; /* Places it behind content */
+}
 
 /* Basic */
 
