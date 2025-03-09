@@ -4105,55 +4105,63 @@ input, select, textarea {
 						padding: 0;
 					}
 
-		/*/*
-    Background Video Styling
-*/
-/*
-#banner {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-}
-*/
-
-/*
-#banner video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-}
-*/
-
-/*
-#banner .content {
-    position: relative;
-    z-index: 10;
-    color: white;
-    text-align: center;
-}
-*/
-
-/*
-    Optional: Add a dark overlay for better text visibility
-*/
-/*
-#banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Adjust the opacity if needed */
-    z-index: 1;
-}
-*/
+		/* Video Background Container */
+			.video-container {
+			    position: fixed;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			    overflow: hidden;
+			    z-index: -1;
+			}
+			
+			/* Video Styling - Fullscreen, No Stretch */
+			.video-container video {
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    min-width: 100%;
+			    min-height: 100%;
+			    width: auto;
+			    height: auto;
+			    object-fit: cover; /* Ensures it covers the screen */
+			    transform: translate(-50%, -50%);
+			    filter: brightness(1.2); /* Slightly brighter for better visibility */
+			}
+			
+			/* Dark Overlay for Better Text Readability */
+			.video-overlay {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			    background: rgba(0, 0, 0, 0.3); /* Adjust darkness as needed */
+			    z-index: 0;
+			}
+			
+			/* Text Content */
+			.text-container {
+			    position: absolute;
+			    z-index: 1;
+			    text-align: center;
+			    color: white;
+			    font-size: 2rem;
+			    font-weight: bold;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			    width: 90%;
+			    max-width: 800px;
+			}
+			
+			/* Prevent Scrolling */
+			body {
+			    margin: 0;
+			    padding: 0;
+			    overflow: hidden; /* Stops background from scrolling */
+			}
 
 
 	}
